@@ -1,0 +1,10 @@
+{
+	"name":"dimoge-blog",
+	"version":"0.0.1",
+	"private":true,
+	
+	"dependencies":{
+		"express":"~4.12.4",
+		"mongodb":"^1.4.13"
+	}
+}
