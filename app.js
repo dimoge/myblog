@@ -1,19 +1,19 @@
-//Æô¶¯·şÎñ½Å±¾
+//å¯åŠ¨æœåŠ¡è„šæœ¬
 
-//Íâ²¿Ä£¿é
+//å¤–éƒ¨æ¨¡å—
 var express=require("express");
 var path=require("path");
 
-//×Ô¶¨ÒåÄ£¿é
+//è‡ªå®šä¹‰æ¨¡å—
 var app=express();
-var category=require("./routers/category.js");//categoryÂ·ÓÉ
+var category=require("./routers/category.js");//categoryè·¯ç”±
 
-//¾²Ì¬Ò³ÃæÂ·ÓÉ
+//é™æ€é¡µé¢è·¯ç”±
 app.use("/",express.static(path.join(__dirname,"public")));
 
-//requestÇëÇó
+//requestè¯·æ±‚
 app.use("/category/", category);
 
 app.listen(3000);
 
-console.log("²©¿ÍÆô¶¯...../n 45.78.50.233:3000");
+console.log("åšå®¢å¯åŠ¨...../n 45.78.50.233:3000");
