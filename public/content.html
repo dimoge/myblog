@@ -17,7 +17,8 @@
           //发请求获取数据, 获取所有分类
             $.get("http://45.78.50.233:3000/category/getCategory.do",
                     function(result){
-                        alert("哈哈"+result);
+                        var json = eval(result);
+                        alert("哈哈"+json.index(0).name+"/n"+json.index(1).name+"/n"+json.index(2).name);
                     }
             );
         };
