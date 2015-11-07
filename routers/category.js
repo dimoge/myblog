@@ -15,8 +15,13 @@ router.get("/getCategory.do", function(request, response){
             //查询数据
             db.collection("category", function(error, collection){
                 if(!error){
-                    console.log(collection.toString());
-                    console.log(collection.toArray().$1.toString());
+                    console.log("success get collection ...")
+                    collection.find({}).toArray(function(error, items){
+                        if(!error){
+                            console.log("success to find category....");
+                            console.log(items.toString());
+                        }
+                    });
                 }
             });
         }
