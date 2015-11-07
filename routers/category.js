@@ -16,7 +16,7 @@ router.get("/getCategory.do", function(request, response){
             db.collection("category", function(error, collection){
                 if(!error){
                     console.log(collection.toString());
-                    console.log(collection.toArray().$1);
+                    console.log(collection.toArray().$1.toString());
                 }
             });
         }
