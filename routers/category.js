@@ -1,5 +1,5 @@
 /**
- * category路由
+ * category璺敱
  *
  */
 
@@ -7,7 +7,13 @@ var express = require("express");
 var router =  express.Router();
 
 router.get("/getCategory.do", function(request, response){
-    console.log("接收到getCategory请求");
+    console.log("success get getCategory.....");
+    var MongoClient = require("mongodb").MongoClient;
+    MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
+        if(!err){
+            console.log("success connect mongoDB....")
+        }
+    })
 });
 
 module.exports = router;
