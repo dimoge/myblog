@@ -20,7 +20,7 @@ router.get("/getCategory.do", function(request, response){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
-                            response.write(items);
+                            response.send(items);
                         }
                     });
                 }
