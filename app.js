@@ -6,8 +6,13 @@ var path=require("path");
 
 //自定义模块
 var app=express();
+var category=require("./routers/category.js");//category路由
 
+//静态页面路由
 app.use("/",express.static(path.join(__dirname,"public")));
+
+//request请求
+app.use("/category/", category);
 
 app.listen(3000);
 
