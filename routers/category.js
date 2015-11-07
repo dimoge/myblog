@@ -19,7 +19,7 @@ router.get("/getCategory.do", function(request, response){
                     collection.find({}).toArray(function(error, items){
                         if(!error){
                             console.log("success to find category....");
-                            console.log(items.toString());
+                            console.log(items);
                         }
                     });
                 }
