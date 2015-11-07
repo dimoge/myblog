@@ -12,7 +12,7 @@ var category=require("./routers/category.js");//category路由
 app.use("/",express.static(path.join(__dirname,"public")));
 
 //request请求
-app.use("/category/", category);
+app.use("/category", category);
 
 app.listen(3000);
 
