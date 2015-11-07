@@ -11,7 +11,13 @@ router.get("/getCategory.do", function(request, response){
     var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
         if(!err){
-            console.log("success connect mongoDB....")
+            console.log("success connect mongoDB....");
+            //查询数据
+            db.collection("category", function(error, collection){
+                if(!error){
+                    console.log(collection.length);
+                }
+            });
         }
     })
 });
