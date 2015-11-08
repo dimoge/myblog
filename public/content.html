@@ -55,6 +55,21 @@
                 }
             });
         };
+
+        function getBlogByTitle(blogId){
+            $.ajax({
+                type:"post",
+                url:"http://45.78.50.233:3000/blog/getBlogByTitle.do",
+                data:"blogId="+blogId,
+                dataType:"json",
+                success:function(data){
+                    alert("拿到数据:"+data);
+                },
+                error:function(){
+                    alert("error:服务器错误!");
+                }
+            });
+        }
     </script>
 </head>
 <body>
