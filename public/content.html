@@ -20,11 +20,21 @@
                     function(result){
                         var json = eval(result);
                         for(var i=0; i<json.length; i++){
-                            $("#category").append("<p ><a href='#' style='font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none'>"
+                            $("#category").append("<p ><a href="+"javascrip:getBlogByCategory("+json[i].id+") style='font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none'>"
                                     + json[i].name +
                                     "</a></p>");
                         }
                     }
+            );
+        };
+
+        function getBlogByCategory(category){
+            $.post("http://45.78.50.233:3000/category/getBlogByCategory.do",
+                    {category:category},
+                    function(result){
+                        alert("我成功啦"+result.length);
+                    },
+                    "json"
             );
         };
     </script>
