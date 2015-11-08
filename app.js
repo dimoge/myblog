@@ -3,11 +3,14 @@
 //外部模块
 var express=require("express");
 var path=require("path");
+var bodyParser = require('body-parser');
 
 //自定义模块
 var app=express();
 var category=require("./routers/category.js");//category路由
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 //静态页面路由
 app.use("/",express.static(path.join(__dirname,"public")));
 
