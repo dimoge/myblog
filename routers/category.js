@@ -6,6 +6,8 @@
 var express = require("express");
 var router =  express.Router();
 
+var categoryId;
+
 /**
  * 获取所有的目录
  */
@@ -38,7 +40,7 @@ router.get("/getCategory.do", function(request, response, next){
  */
 router.post("/getBlogByCategory.do", function(request, response, next){
     console.log("success getBlogByCategory.do");
-    var categoryId = request.body.categoryId;//拿到参数category
+    categoryId = request.body.categoryId;//拿到参数category
     //查询mongo数据库数据
     var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
@@ -48,7 +50,7 @@ router.post("/getBlogByCategory.do", function(request, response, next){
             db.collection("blog", function(error, collection){
                 if(!error){
                     console.log("success get collection ...")
-                    collection.find({"category":0}).toArray(function(error, items){
+                    collection.find({"category":categoryId}).toArray(function(error, items){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
