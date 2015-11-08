@@ -53,6 +53,7 @@ router.post("/getBlogByCategory.do", function(request, response, next){
                             console.log("success to find category....");
                             console.log(items);
                             response.send(items);
+                            db.close();
                         }
                     });
                 }
