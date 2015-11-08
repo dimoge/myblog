@@ -19,7 +19,6 @@
             $.get("http://45.78.50.233:3000/category/getCategory.do",
                     function(result){
                         var json = eval(result);
-                        alert("哈哈"+json[0].name+"/n"+json[1].name+"/n"+json[2].name);
                         for(var i=0; i<json.length; i++){
                             $("#category").append("<p ><a href='#' style='font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none'>"
                                     + json[i].name +
