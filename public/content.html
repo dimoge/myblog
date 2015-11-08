@@ -29,6 +29,7 @@
         };
 
         function getBlogByCategory(category){
+            alert("发送请求了");
             $.post("http://45.78.50.233:3000/category/getBlogByCategory.do",
                     {category:category},
                     function(result){
