@@ -38,7 +38,7 @@ router.get("/getCategory.do", function(request, response, next){
  */
 router.post("/getBlogByCategory.do", function(request, response, next){
     console.log("success getBlogByCategory.do");
-    console.log(request.body);
+    console.log(request);
     var categoryId = request.body.categoryId;//拿到参数category
     //查询mongo数据库数据
     var MongoClient = require("mongodb").MongoClient;
