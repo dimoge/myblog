@@ -33,7 +33,7 @@
             $.ajax({
                 type:"post",
                 url:"http://45.78.50.233:3000/category/getBlogByCategory.do",
-                data:"categoryId="+categoryId,
+                data:"categoryId=0",
                 dataType:"json",
                 beforeSend:function(){
                     alert("send .."+categoryId);
