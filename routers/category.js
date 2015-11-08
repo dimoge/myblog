@@ -24,6 +24,7 @@ router.get("/getCategory.do", function(request, response, next){
                             console.log("success to find category....");
                             console.log(items);
                             response.send(items);
+                            db.close();
                         }
                     });
                 }
@@ -39,6 +40,7 @@ router.post("/getBlogByCategory.do", function(request, response, next){
     console.log("success getBlogByCategory.do");
     //var categoryId = request.body.categoryId;//拿到参数category
     //查询mongo数据库数据
+    var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
         if(!err){
             console.log("success connect mongoDB....");
