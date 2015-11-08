@@ -29,20 +29,29 @@
         };
 
         function getBlogByCategory(categoryId){
-            alert("发送请求了"+categoryId);
             $.ajax({
                 type:"post",
                 url:"http://45.78.50.233:3000/category/getBlogByCategory.do",
-                data:"categoryId=0",
+                data:"categoryId="+categoryId,
                 dataType:"json",
                 beforeSend:function(){
-                    alert("send .."+categoryId);
                 },
                 success:function(data){
                     alert("success");
+                    for(var i=0; i<data.length; i++ ){
+                        $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">'+
+
+                                '<a href="javascrip:void(0)" onclick="getBlogByTitle('+
+                                        data[i].id+
+                                ')" style="text-decoration: none;font-size: 20px;">' +
+                                        data[i].title+
+                                '</a><br/><span style="color: #817c7c">' +
+                                        data[i].date+
+                                '</span></p>');
+                    }
                 },
                 error:function(){
-                    alert("error");
+                    alert("error:服务器错误!");
                 }
             });
         };
@@ -68,20 +77,23 @@
 <div class="body" style="overflow: hidden">
     <div class="left-slide" id="category" style="float: left;width: 30%;height: 400px;border-left: 8px solid #236733; margin-left: 20px"><!-- 左侧-->
         <p style="margin-left: 10px;font-size: 25px;font-weight: bold;color: #817c7c">目录:</p><br>
-        <!--<p ><a href="#"  style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">nodejs实战</a></p>-->
+        <!-- start category-->
+            <!--<p ><a href="#"  style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">nodejs实战</a></p>-->
+        <!-- end category! -->
     </div>
-    <div class="right-slide" style="float: right;background-color: #D0D0CD;height: 100px;width: 60%"><!--右侧-->
-
+    <div class="right-slide" id="title" style="float: left;height: 100px;width: 45%;text-align: right;"><!--右侧-->
+        <br><br><br>
+        <!-- start title-->
+            <!--<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">-->
+                <!--<a href="javascrip:void(0)" onclick="getBlogByTitle()" style="text-decoration: none;font-size: 20px;">我最亲爱的,你好吗?我最亲爱的,你好吗?我最亲爱的,你好吗?</a><br/>-->
+                <!--<span style="color: #817c7c">2015-11-8 19:58:20</span>-->
+            <!--</p>-->
+        <!-- end title！-->
     </div>
 
 
 </div>
 <br>
-
-<form method="post" action="http://45.78.50.233:3000/category/getBlogByCategory.do">
-    <input type="text" name="categoryId">
-    <input type="submit">
-</form>
 <!--底部部分-->
 <div style="width: 100%; height: 400px;background-image: url('images/jake.jpg');background-size:100%;">
 </div>
