@@ -37,7 +37,7 @@ router.get("/getCategory.do", function(request, response, next){
  */
 router.post("/getBlogByCategory.do", function(request, response, next){
     console.log("success getBlogByCategory.do");
-    var categoryId = request.body.categoryId;//拿到参数category
+    //var categoryId = request.body.categoryId;//拿到参数category
     //查询mongo数据库数据
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
         if(!err){
@@ -46,13 +46,13 @@ router.post("/getBlogByCategory.do", function(request, response, next){
             db.collection("blog", function(error, collection){
                 if(!error){
                     console.log("success get collection ...")
-                    collection.find({category:categoryId}).toArray(function(error, items){
-                        if(!error){
-                            console.log("success to find category....");
-                            console.log(items);
-                            response.send(items);
-                        }
-                    });
+                    //collection.find({category:categoryId}).toArray(function(error, items){
+                    //    if(!error){
+                    //        console.log("success to find category....");
+                    //        console.log(items);
+                    //        response.send(items);
+                    //    }
+                    //});
                 }
             });
         }
