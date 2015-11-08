@@ -49,7 +49,7 @@ router.post("/getBlogByCategory.do", function(request, response, next){
             //查询数据
             db.collection("blog", function(error, collection){
                 if(!error){
-                    console.log("success get collection ...")
+                    console.log("success get collection ...");
                     collection.find({"category":'"'+categoryId+'"'}).toArray(function(error, items){
                         if(!error){
                             console.log("success to find category....");
