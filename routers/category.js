@@ -36,7 +36,8 @@ router.get("/getCategory.do", function(request, response, next){
  * 根据目录获取所属博客分类
  */
 router.post("/getBlogByCategory.do", function(request, response, next){
-    var category = request.body.category;//拿到参数category
+    var categoryId = request.body.categoryId;//拿到参数category
+    console.log("success getBlogByCategory.do"+ category);
     //查询mongo数据库数据
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
         if(!err){
@@ -45,7 +46,7 @@ router.post("/getBlogByCategory.do", function(request, response, next){
             db.collection("blog", function(error, collection){
                 if(!error){
                     console.log("success get collection ...")
-                    collection.find({category:category}).toArray(function(error, items){
+                    collection.find({category:categoryId}).toArray(function(error, items){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);

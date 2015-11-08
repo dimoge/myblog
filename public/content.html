@@ -28,10 +28,10 @@
             );
         };
 
-        function getBlogByCategory(category){
+        function getBlogByCategory(categoryId){
             alert("发送请求了"+category);
             $.post("http://45.78.50.233:3000/category/getBlogByCategory.do",
-                    {category:category},
+                    {categoryId:categoryId},
                     function(result){
                         alert("我成功啦"+result.length);
                     },
