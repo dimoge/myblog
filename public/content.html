@@ -40,7 +40,7 @@
                     alert("数据"+data);
                     var titleChildren = $("#title").children;
                     for(var i=0; i<titleChildren.length; i++ ){
-                        titleChildren[i].remove();
+                        $("#title").removeChild(titleChildren[i]);
                     }
                     $("#title").children
                     for(var i=0; i<data.length; i++ ){
