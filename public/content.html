@@ -38,6 +38,11 @@
                 },
                 success:function(data){
                     alert("数据"+data);
+                    var titleChildren = $("#title").children;
+                    for(var i=0; i<titleChildren.length; i++ ){
+                        titleChildren[i].remove();
+                    }
+                    $("#title").children
                     for(var i=0; i<data.length; i++ ){
                         $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">'+
 
@@ -96,7 +101,7 @@
             <!--<p ><a href="#"  style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">nodejs实战</a></p>-->
         <!-- end category! -->
     </div>
-    <div class="right-slide" id="title" style="float: left;height: 100px;width: 45%;text-align: right;"><!--右侧-->
+    <div class="right-slide" id="title" style="float: left;width: 45%;text-align: right;"><!--右侧-->
         <br><br><br>
         <!-- start title-->
             <!--<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">-->
