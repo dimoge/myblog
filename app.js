@@ -12,7 +12,7 @@ var category=require("./routers/category.js");//category路由
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 //静态页面路由
-app.use(express.static(path.join(__dirname,"views")));
+app.use("/views",express.static(path.join(__dirname,"views")));
 app.use("/public", express.static(path.join(__dirname), "public"));
 
 //request请求
