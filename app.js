@@ -11,6 +11,7 @@ var category=require("./routers/category.js");//category路由
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.set("view engine", "ejs");//使用ejs作为模板引擎
 //静态页面路由
 app.use("/views",express.static(path.join(__dirname,"views")));
 
