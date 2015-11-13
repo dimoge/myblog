@@ -23,4 +23,5 @@ app.use("/about", about);
 //app.use();
 app.listen(3000);
 
-console.log("博客启动...../n 45.78.50.233:3000");
+console.log("myblog start----|------ 45.78.50.233:3000");
+console.log("port:3000");
