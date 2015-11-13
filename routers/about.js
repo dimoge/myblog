@@ -20,7 +20,6 @@ router.get("/getBlogByCategory.do", function(request, response){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
-                            response.send(items);
                             response.render("about", items);
                             db.close();
                         }
