@@ -20,7 +20,7 @@ app.use("/public",express.static(path.join(__dirname, 'public')));
 //request请求路由
 app.use("/category", category);
 app.use("/about", about);
-app.use();
+//app.use();
 app.listen(3000);
 
 console.log("博客启动...../n 45.78.50.233:3000");
