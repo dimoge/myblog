@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "ejs");//使用ejs作为模板引擎
 
 //自定义router
+var index=require("./routers/index.js");
 var category=require("./routers/category.js");
 var about = require("./routers/about.js");
 //静态路由
@@ -18,6 +19,7 @@ var about = require("./routers/about.js");
 app.use("/public",express.static(path.join(__dirname, 'public')));
 
 //request请求路由
+app.use("/",index);
 app.use("/category", category);
 app.use("/about", about);
 //app.use();
