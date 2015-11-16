@@ -58,8 +58,8 @@
 
         function getBlogById(blogId) {
             $.ajax({
-                type: "post",
-                url: "http://45.78.50.233:3000/blog/getBlogById.do",
+                type: "POST",
+                url: "/blog/getBlogById.do",
                 data: "blogId=" + blogId,
                 dataType: "json",
                 success: function (data) {
