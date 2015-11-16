@@ -19,6 +19,7 @@ router.get("/getBlogByCategory.do", function(request, response){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
+                            response.redirect("views/about.ejs");
                             response.render("about", items);
                             db.close();
                         }
