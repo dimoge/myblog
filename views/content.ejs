@@ -64,9 +64,10 @@
                 data: "blogId=" + blogId,
                 dataType: "json",
                 success: function (data) {
+                    alert("success");
                 },
                 error: function () {
-                    alert("error:服务器错误!");
+                    alert("error:服务器错误!"+error.toString());
                 }
             });
         }
