@@ -14,19 +14,19 @@
     <!-- 导入jquer-->
     <script src="/public/js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <script>
-        window.onload = function(){
-          //发请求获取数据, 获取所有分类
-            $.get("http://45.78.50.233:3000/category/getCategory.do",
-                    function(result){
-                        var json = eval(result);
-                        for(var i=0; i<json.length; i++){
-                            $("#category").append('<p ><a href="javascrip:void(0)" onclick="getBlogByCategory('+json[i].id+')" '+ 'style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">'
-                                    + json[i].name +
-                                    '</a></p>');
-                        }
-                    }
-            );
-        };
+//        window.onload = function(){
+//          //发请求获取数据, 获取所有分类
+//            $.get("http://45.78.50.233:3000/category/getCategory.do",
+//                    function(result){
+//                        var json = eval(result);
+//                        for(var i=0; i<json.length; i++){
+//                            $("#category").append('<p ><a href="javascrip:void(0)" onclick="getBlogByCategory('+json[i].id+')" '+ 'style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">'
+//                                    + json[i].name +
+//                                    '</a></p>');
+//                        }
+//                    }
+//            );
+//        };
 
         function getBlogByCategory(categoryId){
             $.ajax({
@@ -80,7 +80,7 @@
     <p style="text-align: left;font-weight: bold;margin-left: 20px">纯手工打造, 要什么模板, 此处感谢jason blog提供的原型.......</p>
     <div style="text-align: right ">
         <a href="index.ejs" style="color:#F3F2F2;text-decoration:none;font-weight: bold">首页</a>&nbsp&nbsp
-        <a href="content.html" style="color:#F3F2F2;text-decoration:none;font-weight: bold">目录</a>&nbsp&nbsp
+        <a href="/content/getCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold">目录</a>&nbsp&nbsp
         <a href="about.ejs" style="color:#F3F2F2;text-decoration:none;font-weight: bold" >关于</a>&nbsp&nbsp
         <input type="text" placeholder="搜索" style="color:#F3F2F2;font-weight: bold"/>&nbsp
     </div>
