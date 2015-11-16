@@ -3,7 +3,7 @@ var router =  express.Router();
 
 
 /**
- * 获取我的信息
+ * about 璺敱
  **/
 
 router.get("/getBlogByCategory.do", function(request, response){
@@ -12,7 +12,6 @@ router.get("/getBlogByCategory.do", function(request, response){
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
         if(!err){
             console.log("success connect mongoDB....");
-            //查询数据
             db.collection("user", function(error, collection){
                 if(!error){
                     console.log("success get collection ...")
