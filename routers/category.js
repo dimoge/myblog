@@ -25,7 +25,7 @@ router.get("/getCategory.do", function(request, response, next){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
-                            response.send("content", {"category":items});
+                            response.render("content", {"category":items});
                             db.close();
                         }
                     });
