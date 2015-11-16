@@ -65,8 +65,8 @@
                 success: function (data) {
                     alert("success");
                 },
-                error: function () {
-                    alert("error:服务器错误!");
+                error: function (error) {
+                    alert("error:服务器错误!"+error);
                 }
             });
         }
