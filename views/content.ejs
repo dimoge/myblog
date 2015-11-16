@@ -3,10 +3,10 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Dimoge-Blog</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="../public/images/favicon.ico" media="screen"/>
     <meta charset="utf-8">
     <style>
-        .item{
+        .item {
             border-left: 7px solid #236733;
             padding-left: 8px;
         }
@@ -14,58 +14,58 @@
     <!-- 导入jquer-->
     <script src="/public/js/jquery-1.8.3.min.js" type="text/javascript"></script>
     <script>
-//        window.onload = function(){
-//          //发请求获取数据, 获取所有分类
-//            $.get("http://45.78.50.233:3000/category/getCategory.do",
-//                    function(result){
-//                        var json = eval(result);
-//                        for(var i=0; i<json.length; i++){
-//                            $("#category").append('<p ><a href="javascrip:void(0)" onclick="getBlogByCategory('+json[i].id+')" '+ 'style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">'
-//                                    + json[i].name +
-//                                    '</a></p>');
-//                        }
-//                    }
-//            );
-//        };
+        //        window.onload = function(){
+        //          //发请求获取数据, 获取所有分类
+        //            $.get("http://45.78.50.233:3000/category/getCategory.do",
+        //                    function(result){
+        //                        var json = eval(result);
+        //                        for(var i=0; i<json.length; i++){
+        //                            $("#category").append('<p ><a href="javascrip:void(0)" onclick="getBlogByCategory('+json[i].id+')" '+ 'style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">'
+        //                                    + json[i].name +
+        //                                    '</a></p>');
+        //                        }
+        //                    }
+        //            );
+        //        };
 
-        function getBlogByCategory(categoryId){
+        function getBlogByCategory(categoryId) {
             $.ajax({
-                type:"post",
-                url:"http://45.78.50.233:3000/category/getBlogByCategory.do",
-                data:"categoryId="+categoryId,
-                dataType:"json",
-                beforeSend:function(){
+                type: "post",
+                url: "http://45.78.50.233:3000/category/getBlogByCategory.do",
+                data: "categoryId=" + categoryId,
+                dataType: "json",
+                beforeSend: function () {
                 },
-                success:function(data){
-                    alert("数据"+data);
+                success: function (data) {
+                    alert("数据" + data);
                     $("#title").empty();
-                    for(var i=0; i<data.length; i++ ){
-                        $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">'+
+                    for (var i = 0; i < data.length; i++) {
+                        $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">' +
 
-                                '<a href="javascrip:void(0)" onclick="getBlogByTitle('+
-                                        data[i].id+
+                                '<a href="javascrip:void(0)" onclick="getBlogByTitle(' +
+                                data[i].id +
                                 ')" style="text-decoration: none;font-size: 20px;">' +
-                                        data[i].title+
+                                data[i].title +
                                 '</a><br/><span style="color: #817c7c">' +
-                                        data[i].date+
+                                data[i].date +
                                 '</span></p>');
                     }
                 },
-                error:function(){
+                error: function () {
                     alert("error:服务器错误!");
                 }
             });
-        };
+        }
 
-        function getBlogByTitle(blogId){
+        function getBlogByTitle(blogId) {
             $.ajax({
-                type:"post",
-                url:"http://45.78.50.233:3000/blog/getBlogByTitle.do",
-                data:"blogId="+blogId,
-                dataType:"json",
-                success:function(data){
+                type: "post",
+                url: "http://45.78.50.233:3000/blog/getBlogByTitle.do",
+                data: "blogId=" + blogId,
+                dataType: "json",
+                success: function (data) {
                 },
-                error:function(){
+                error: function () {
                     alert("error:服务器错误!");
                 }
             });
@@ -76,11 +76,13 @@
 <!--头部部分-->
 <div class="head" style="background-color: #06B184; height: 200px;width: 100%; margin: -8px -8px -8px -8px;">
     <img src="../public/images/logo.jpg" style="width: 240px; text-align: left;"/>
+
     <p style="text-align: left;font-weight: bold;margin-left: 20px">纯手工打造, 要什么模板, 此处感谢jason blog提供的原型.......</p>
+
     <div style="text-align: right ">
         <a href="/" style="color:#F3F2F2;text-decoration:none;font-weight: bold">首页</a>&nbsp&nbsp
         <a href="/category/getCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold">目录</a>&nbsp&nbsp
-        <a href="/about/getBlogByCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold" >关于</a>&nbsp&nbsp
+        <a href="/about/getBlogByCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold">关于</a>&nbsp&nbsp
         <input type="text" placeholder="搜索" style="color:#F3F2F2;font-weight: bold"/>&nbsp
     </div>
 </div>
@@ -90,23 +92,26 @@
 
 <!--主体部分-->
 <div class="body" style="overflow: hidden">
-    <div class="left-slide" id="category" style="float: left;width: 30%;height: 400px;border-left: 8px solid #236733; margin-left: 20px"><!-- 左侧-->
+    <div class="left-slide" id="category"
+         style="float: left;width: 30%;height: 400px;border-left: 8px solid #236733; margin-left: 20px"><!-- 左侧-->
         <p style="margin-left: 10px;font-size: 25px;font-weight: bold;color: #817c7c">目录:</p><br>
 
-        <% for(var i=0 ; i< category.length ; i++){ %>
-            <p ><a href="javascrip:void(0)" onclick="getBlogByCategory(<%= category[i].id%>)" style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none"><%= category[i].name%></a></p>
+        <% for(var i = 0 ; i < category.length ; i++){ %>
+        <p><a href="javascrip:void(0)" onclick="getBlogByCategory(<%= category[i].id %>)"
+              style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none"><%= category[i].name %></a>
+        </p>
         <% } %>
         <!-- start category-->
-            <!--<p ><a href="#"  style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">nodejs实战</a></p>-->
+        <!--<p ><a href="#"  style="font-size: 20px;color: #2ca6cb;font-weight: bold;margin-left: 10px;text-decoration: none">nodejs实战</a></p>-->
         <!-- end category! -->
     </div>
     <div class="right-slide" id="title" style="float: left;width: 45%;text-align: right;"><!--右侧-->
         <br><br><br>
         <!-- start title-->
-            <!--<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">-->
-                <!--<a href="javascrip:void(0)" onclick="getBlogByTitle()" style="text-decoration: none;font-size: 20px;">我最亲爱的,你好吗?我最亲爱的,你好吗?我最亲爱的,你好吗?</a><br/>-->
-                <!--<span style="color: #817c7c">2015-11-8 19:58:20</span>-->
-            <!--</p>-->
+        <!--<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">-->
+        <!--<a href="javascrip:void(0)" onclick="getBlogByTitle()" style="text-decoration: none;font-size: 20px;">我最亲爱的,你好吗?我最亲爱的,你好吗?我最亲爱的,你好吗?</a><br/>-->
+        <!--<span style="color: #817c7c">2015-11-8 19:58:20</span>-->
+        <!--</p>-->
         <!-- end title！-->
     </div>
 
