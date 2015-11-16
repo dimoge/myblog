@@ -14,7 +14,7 @@ app.set("view engine", "ejs");//使用ejs作为模板引擎
 var category=require("./routers/category.js");
 var about = require("./routers/about.js");
 //静态路由
-app.use("/views",express.static(path.join(__dirname,"views")));
+//app.use("/views",express.static(path.join(__dirname,"views")));
 app.use("/public",express.static(path.join(__dirname, 'public')));
 
 //request请求路由
