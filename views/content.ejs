@@ -42,7 +42,7 @@
                     for (var i = 0; i < data.length; i++) {
                         $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">' +
 
-                                '<a href="javascrip:void(0)" onclick="getBlogByTitle(' +
+                                '<a href="javascrip:void(0)" onclick="getBlogById(' +
                                 data[i].id +
                                 ')" style="text-decoration: none;font-size: 20px;">' +
                                 data[i].title +
@@ -57,10 +57,10 @@
             });
         }
 
-        function getBlogByTitle(blogId) {
+        function getBlogById(blogId) {
             $.ajax({
                 type: "post",
-                url: "http://45.78.50.233:3000/blog/getBlogByTitle.do",
+                url: "http://45.78.50.233:3000/blog/getBlogById.do",
                 data: "blogId=" + blogId,
                 dataType: "json",
                 success: function (data) {

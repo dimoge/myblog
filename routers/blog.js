@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-router.post("/getBlogByTitle.do",function(request, response){
+router.post("/getBlogByTd.do",function(request, response){
     var blogId = request.body.blogId;
     var MongoClient = require("mongodb").MongoClient;
     MongoClient.connect("mongodb://localhost:27017/myblog", function(err, db){
