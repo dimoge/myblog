@@ -15,7 +15,7 @@ router.get("/getAll.do", function (request, response) {
                 if (!error) {
                     collection.find({}).toArray(function (error, items) {
                         if (!error) {
-                            response.render("./admin/category.ejs", {"categories": items});
+                            response.render("../admin/category.ejs", {"categories": items});
                             db.close();
                         }
                     });
