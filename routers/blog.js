@@ -1,7 +1,7 @@
 var express = require("express");
 var router =  express.Router();
 
-router.post("/getBlogById.do",function(request, response){
+router.get("/getBlogById.do",function(request, response){
     console.log("success.....getBlogById.do");
     var blogId = request.body.blogId;
     var MongoClient = require("mongodb").MongoClient;
