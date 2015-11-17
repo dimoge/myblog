@@ -16,7 +16,7 @@ router.post("/getBlogById.do",function(request, response){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
-                            response.redirect("blog", {"blog": items[0]});
+                            response.render("blog", {"blog": items[0]});
                             db.close();
                         }
                     });
