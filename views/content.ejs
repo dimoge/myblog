@@ -40,14 +40,8 @@
                     $("#title").empty();
                     for (var i = 0; i < data.length; i++) {
                         $("#title").append('<p style="width: 100%;border-right: 8px solid #236733;font-weight: bold;padding-right: 15px;">' +
-
-                                '<a href="javascrip:void(0)" onclick="getBlogById(' +
-                                data[i].id +
-                                ')" style="text-decoration: none;font-size: 20px;">' +
-                                data[i].title +
-                                '</a><br/><span style="color: #817c7c">' +
-                                data[i].date +
-                                '</span></p>');
+                                '<a href="/blog/getBlogById.do?blogId=' + data[i].id + '" style="text-decoration: none;font-size: 20px;">' +
+                                data[i].title + '</a><br/><span style="color: #817c7c">' + data[i].date + '</span></p>');
                     }
                 },
                 error: function () {
@@ -62,7 +56,7 @@
                 url: "/blog/getBlogById.do",
                 data: "blogId=" + blogId,
                 dataType: "json",
-                async:false
+                async: false
 //                success: function (data) {
 //                    alert("success");
 //                },
