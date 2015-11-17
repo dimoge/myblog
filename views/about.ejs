@@ -3,11 +3,11 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Dimoge-Blog</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/public/images/favicon.ico" media="screen" />
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/favicon.ico" media="screen"/>
     <meta charset="utf-8">
 
     <style>
-        .item{
+        .item {
             border-left: 7px solid #236733;
             padding-left: 8px;
         }
@@ -18,11 +18,13 @@
 <!--头部部分-->
 <div class="head" style="background-color: #06B184; height: 200px;width: 100%; margin: -8px -8px -8px -8px;">
     <img src="../public/images/logo.jpg" style="width: 240px; text-align: left;"/>
+
     <p style="text-align: left;font-weight: bold;margin-left: 20px">纯手工打造, 要什么模板, 此处感谢jason blog提供的原型.......</p>
+
     <div style="text-align: right ">
         <a href="/" style="color:#F3F2F2;text-decoration:none;font-weight: bold">首页</a>&nbsp&nbsp
         <a href="/category/getCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold">目录</a>&nbsp&nbsp
-        <a href="/about/getBlogByCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold" >关于</a>&nbsp&nbsp
+        <a href="/about/getBlogByCategory.do" style="color:#F3F2F2;text-decoration:none;font-weight: bold">关于</a>&nbsp&nbsp
         <input type="text" placeholder="搜索" style="color:#F3F2F2;font-weight: bold"/>&nbsp
     </div>
 </div>
@@ -32,13 +34,14 @@
 <!--主体部分-->
 <div class="body" style="overflow: hidden">
     <div class="left-slide" style="float: left;width: 70%;height: 100%"><!-- 左侧-->
-        别急, 即将渲染特效.....哒哒哒答.....<hr>
-        <%= user.name%><br>
-        <%= user.sex%><br>
-        <%= user.email%><br>
-        <%= user.qq%><br>
-        <%= user.tel%><br>
-        <%= user.password%><br>
+        别急, 即将渲染特效.....哒哒哒答.....
+        <hr>
+        <%= user.name %><br>
+        <%= user.sex %><br>
+        <%= user.email %><br>
+        <%= user.qq %><br>
+        <%= user.tel %><br>
+        <%= user.password %><br>
     </div>
     <div class="right-slide" style="float: right;background-color: #ffdddd;height: 100px;width: 30%"><!--右侧-->
 
