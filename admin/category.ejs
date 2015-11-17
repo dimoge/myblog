@@ -6,7 +6,7 @@
 </head>
 <body>
     <% for(var i=0 ; i<categories.length; i++ ){ %>
-        i &nbsp;&nbsp;<%= categories[i].id%>&nbsp;&nbsp;<%= categories[i].name%> <a href="/admin/category/del.do?categoryId=<%=categories[i].id%>">删除</a> <br>
+       <%= i%>  &nbsp;&nbsp;<%= categories[i].id%>&nbsp;&nbsp;<%= categories[i].name%> <a href="/admin/category/del.do?categoryId=<%=categories[i].id%>">删除</a> <br>
     <%}%>
 </body>
 </html>
