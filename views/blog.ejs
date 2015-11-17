@@ -37,11 +37,11 @@
     <div class="body" style="overflow: hidden">
         <div class="left-slide" style="float: left;width: 70%;height: 100%"><!-- 左侧-->
             <div class="item">
-                <p style="color: #2ca6cb; text-decoration: none; font-weight: bolder;font-size: 35px;text-align: center">标题:我始终坚信说的多不如做的多</p>
-                <p style="color: #817c7c;text-align: center;font-weight: bold">时间:2015-11-07</p>
+                <p style="color: #2ca6cb; text-decoration: none; font-weight: bolder;font-size: 35px;text-align: center"><%= blog.title%></p>
+                <p style="color: #817c7c;text-align: center;font-weight: bold"><$= blog.date</p>
                 <br>
                 <p style="font-size: 105%; line-height: 1.8;font-size: 17px;color: #817c7c;font-family: 'Helvetica Neue', 'Helvetica', 'Microsoft YaHei', 'WenQuanYi Micro Hei', Arial, sans-serif;">
-                    内容
+                    <%= blog.content%>
                 </p>
             </div>
         </div>
