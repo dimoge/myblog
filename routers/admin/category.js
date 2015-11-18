@@ -51,7 +51,21 @@ router.post("/add.do", function (request, response) {
  * 删除一个
  */
 router.get("/del.do", function (request, response) {
-
+    var categoryId = request.query.categoryId;
+    var MongoClient = require("mongodb").MongoClient;
+    MongoClient.connect("mongodb://localhost:27017/myblog", function (err, db) {
+        if (!err) {
+            db.collection("category", function (error, collection) {
+                if (!error) {
+                    collection.remove({"id":categoryId}, function(error, result){
+                        if(!error){
+                            response.redirect("/admin/category/getAll.do");
+                        }
+                    });
+                }
+            });
+        }
+    })
 });
 
 module.exports = router;
