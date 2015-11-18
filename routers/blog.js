@@ -12,7 +12,7 @@ router.get("/getBlogById.do",function(request, response){
             db.collection("blog", function(error, collection){
                 if(!error){
                     console.log("success get collection ...");
-                    collection.find({"id": parseInt(blogId)}).toArray(function(error, items){
+                    collection.find({"id": blogId}).toArray(function(error, items){
                         if(!error){
                             console.log("success to find category....");
                             console.log(items);
