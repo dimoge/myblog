@@ -16,7 +16,7 @@ router.get("/getAll.do", function (request, response) {
                 if (!error) {
                     collection.find({}).toArray(function (error, items) {
                         if (!error) {
-                            response.render("../admin/blog.ejs", {"blog": items});
+                            response.render("../admin/blog.ejs", {"blogs": items});
                             db.close();
                         }
                     });
