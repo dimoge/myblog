@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客管理</title>
+</head>
+<body>
+<form action="/admin/blog/add.do" method="post">
+    分类:<input type="text" name="category"/> <br/>
+    标题:<input type="text" name="title" style="width: 400px"><br/>
+    内容:<textarea name="content" style="width: 800px;rows:200;wrap:hard;cols:300;"/><br/>
+    <input type="submit" value="添加">
+</form>
+<br><hr/><br>
+<% for(var i = 0 ; i < blogs.length ; i++){ %>
+    <%= i%>&nbsp;&nbsp; <%= blogs[i].id%>&nbsp;&nbsp; <%= blogs[i].title%>&nbsp;&nbsp;<%= blogs[i].date%> &nbsp;&nbsp;<a href="/admin/blog/del.do?blogId=<%= blogs[i].id%>">删除</a>
+<% } %>
+</body>
+</html>
