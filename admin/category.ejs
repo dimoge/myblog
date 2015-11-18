@@ -31,7 +31,7 @@
 <input id="categoryValue" type="text" style="width: 200px"/><input type="button" value="添加" onclick="addCategory()"/>
 <br> <hr> <br>
 <% for(var i = 0 ; i < categories.length; i++ ){ %>
-    <%= i %> &nbsp;&nbsp;<%= categories[i].id %>&nbsp;&nbsp;<%= categories[i].name %> <ahref="/admin/category/del.do?categoryId=<%= categories[i].id %>">删除</a> <br>
+    <%= i %> &nbsp;&nbsp;<%= categories[i].id %>&nbsp;&nbsp;<%= categories[i].name %> <a href="/admin/category/del.do?categoryId=<%= categories[i].id %>">删除</a> <br>
 <% } %>
 </body>
 </html>
