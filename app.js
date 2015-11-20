@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var router = express.Router();
 
-    app.use(bodyParser.json());//使用bod-parser中间件解析request的数据
+app.use(bodyParser.json());//使用bod-parser中间件解析request的数据
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "ejs");//使用ejs作为模板引擎
 
@@ -35,7 +35,7 @@ app.use("/admin/category", adminCategory);
 app.use("/admin/blog", adminBlog);
 app.use("/admin/comment", adminComment);
 app.use("/admin/user", adminUser);
-router.get("admin/manager.do",function(req, res){
+router.get("/admin/manager.do",function(req, res){
     res.render("../admin/manager");
 });
 
