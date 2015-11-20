@@ -20,6 +20,7 @@ var adminCategory = require("./routers/admin/category.js");
 var adminBlog = require("./routers/admin/blog.js");
 var adminComment = require("./routers/admin/blog.js");
 var adminUser = require("./routers/admin/user.js");
+var adminManager = require("./routers/admin/manager.js");
 
 //静态路由
 //app.use("/views",express.static(path.join(__dirname,"views")));
@@ -35,9 +36,7 @@ app.use("/admin/category", adminCategory);
 app.use("/admin/blog", adminBlog);
 app.use("/admin/comment", adminComment);
 app.use("/admin/user", adminUser);
-router.get("/admin/manager.do",function(req, res){
-    res.render("../admin/manager");
-});
+app.get("/admin",adminManager);
 
 //app.use();
 app.listen(3000);
