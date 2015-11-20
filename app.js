@@ -34,6 +34,9 @@ app.use("/admin/category", adminCategory);
 app.use("/admin/blog", adminBlog);
 app.use("/admin/comment", adminComment);
 app.use("/admin/user", adminUser);
+app.get("admin/manager.do",function(req, res){
+    res.render("../admin/manager");
+});
 
 //app.use();
 app.listen(3000);
