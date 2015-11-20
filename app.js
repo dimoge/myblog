@@ -36,7 +36,7 @@ app.use("/admin/category", adminCategory);
 app.use("/admin/blog", adminBlog);
 app.use("/admin/comment", adminComment);
 app.use("/admin/user", adminUser);
-app.get("/admin",adminManager);
+app.use("/admin",adminManager);
 
 //app.use();
 app.listen(3000);
