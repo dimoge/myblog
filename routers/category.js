@@ -31,6 +31,7 @@ router.get("/getCategory.do", function(request, response, next){
                     });
                 }
             });
+
         }
     })
 });
